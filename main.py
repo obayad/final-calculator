@@ -29,6 +29,11 @@ main_label = ctk.CTkLabel(root,
                           anchor="e", padx=8, pady=20)
 main_label.pack()
 
+#tabmenu frame
+
+tab = ctk.CTkTabview(root, height=20,fg_color="Blue")
+tab.pack()
+
 #button Frame
 btn_frame = ctk.CTkFrame(root)
 
