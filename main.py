@@ -1,4 +1,5 @@
 import customtkinter as ctk
+from PIL import Image, ImageTk
 
 root = ctk.CTk()
 root.geometry("400x600")
@@ -104,6 +105,8 @@ btn9.grid(row=1,column=3, sticky="nsew", padx=2,pady=2)
 btn10 = ctk.CTkButton(btn_frame, text="mod", font=(bfont, 16),fg_color=btn_color,text_color=btn_text_color,height=btn_height)
 btn10.grid(row=1,column=4, sticky="nsew", padx=2,pady=2)
 
+photo = ctk.CTkImage(Image.open("final-calculator/division-symbol.png"), size=(20,20))
+
 #third row
 btn11 = ctk.CTkButton(btn_frame, text="√", font=(bfont, 16),fg_color=btn_color,text_color=btn_text_color,height=btn_height)
 btn11.grid(row=2,column=0, sticky="nsew", padx=2,pady=2)
@@ -113,7 +116,7 @@ btn13 = ctk.CTkButton(btn_frame, text=")", font=(bfont, 16),fg_color=btn_color,t
 btn13.grid(row=2,column=2, sticky="nsew", padx=2,pady=2)
 btn14 = ctk.CTkButton(btn_frame, text="n!", font=(bfont, 16),fg_color=btn_color,text_color=btn_text_color,height=btn_height)
 btn14.grid(row=2,column=3, sticky="nsew", padx=2,pady=2)
-btn15 = ctk.CTkButton(btn_frame, text="/", font=(bfont, 16),fg_color=btn_color,text_color=btn_text_color,height=btn_height)
+btn15 = ctk.CTkButton(btn_frame, image=photo, text="" ,fg_color=btn_color,text_color=btn_text_color,height=btn_height)
 btn15.grid(row=2,column=4, sticky="nsew", padx=2,pady=2)
 
 #fourth row
