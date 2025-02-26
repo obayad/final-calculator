@@ -5,6 +5,10 @@ root.geometry("400x600")
 root.resizable(False, False)
 root.title("Calculator")
 
+btn_height=36
+btn_color= "#f8f8f8"
+btn_text_color = "Black"
+
 equation_text ="0"
 equation_label = ctk.StringVar(value=equation_text)
 
@@ -31,11 +35,42 @@ main_label.pack()
 
 #tabmenu frame
 
-tab = ctk.CTkTabview(root, height=20,fg_color="Blue")
+tab = ctk.CTkTabview(root,fg_color="transparent", width=400, height=50)
 tab.pack()
 
+#create tabs
+trigonometry_tab = tab.add("Trigonometry")
+exponential_tab = tab.add("Exponential")
+
+#trigonometry tab Frame
+trigonometry_tab.columnconfigure(0,weight=1)
+trigonometry_tab.columnconfigure(1,weight=1)
+trigonometry_tab.columnconfigure(2,weight=1)
+
+#exponential tab Frame
+exponential_tab.columnconfigure(0,weight=1)
+exponential_tab.columnconfigure(1,weight=1)
+exponential_tab.columnconfigure(2,weight=1)
+
+
+#trigonometry frame
+btn_sin = ctk.CTkButton(trigonometry_tab, text="sin", font=(bfont, 16),fg_color="#f8f8f8",text_color="Black",height=btn_height)
+btn_sin.grid(row=0,column=0, sticky="nsew", padx=2)
+btn_sin = ctk.CTkButton(trigonometry_tab, text="cos", font=(bfont, 16),fg_color="#f8f8f8",text_color="Black",height=btn_height)
+btn_sin.grid(row=0,column=1, sticky="nsew", padx=2)
+btn_sin = ctk.CTkButton(trigonometry_tab, text="tan", font=(bfont, 16),fg_color="#f8f8f8",text_color="Black",height=btn_height)
+btn_sin.grid(row=0,column=2, sticky="nsew", padx=2)
+
+#exponential frame
+btn_log = ctk.CTkButton(exponential_tab, text="log", font=(bfont, 16),fg_color="#f8f8f8",text_color="Black",height=btn_height)
+btn_log.grid(row=0,column=0, sticky="nsew", padx=2)
+btn_log = ctk.CTkButton(exponential_tab, text="ln", font=(bfont, 16),fg_color="#f8f8f8",text_color="Black",height=btn_height)
+btn_log.grid(row=0,column=1, sticky="nsew", padx=2)
+btn_log = ctk.CTkButton(exponential_tab, text="exp", font=(bfont, 16),fg_color="#f8f8f8",text_color="Black",height=btn_height)
+btn_log.grid(row=0,column=2, sticky="nsew", padx=2)
+
 #button Frame
-btn_frame = ctk.CTkFrame(root)
+btn_frame = ctk.CTkFrame(root, fg_color="transparent")
 
 btn_frame.columnconfigure(0,weight=1)
 btn_frame.columnconfigure(1,weight=1)
@@ -43,9 +78,7 @@ btn_frame.columnconfigure(2,weight=1)
 btn_frame.columnconfigure(3,weight=1)
 btn_frame.columnconfigure(4,weight=1)
 
-btn_height=36
-btn_color= "#f8f8f8"
-btn_text_color = "Black"
+
 
 #first row
 btn1 = ctk.CTkButton(btn_frame, text="2ⁿ", font=(bfont, 16),fg_color=btn_color,text_color=btn_text_color,height=btn_height)
